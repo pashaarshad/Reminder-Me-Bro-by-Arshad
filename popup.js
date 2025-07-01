@@ -35,7 +35,15 @@ function loadSites() {
   const siteList = document.getElementById('siteList');
   siteList.innerHTML = `
     <div id="reminder-list">
-      <h4><i class="fa fa-folder-open" style="color:#1a73e8;margin-right:6px"></i>Reminder Me Bro</h4>
+      <h4>
+        <span style="vertical-align:middle; margin-right:6px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:inline-block;vertical-align:middle;">
+            <path d="M2 7.5A2.5 2.5 0 0 1 4.5 5H8.2a2 2 0 0 1 1.6.8l.9 1.2H20a2 2 0 0 1 2 2v8.5A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-10z" fill="#1a73e8"/>
+            <rect x="3" y="9" width="18" height="9" rx="1.5" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
+          </svg>
+        </span>
+        Reminder Me Bro
+      </h4>
       <ul id="reminderItems"></ul>
     </div>
   `;
