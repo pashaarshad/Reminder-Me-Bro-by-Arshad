@@ -71,14 +71,26 @@ function loadSites() {
       status.style.border = site.visited ? "2px solid #4CAF50" : "2px solid #ccc";
       status.style.background = site.visited ? "#4CAF50" : "#fff";
       if (site.visited) {
-        status.innerHTML = '<i class="fa fa-check-circle" style="color:#fff;font-size:18px;position:relative;top:1px;left:1px"></i>';
+        status.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 24 24" style="position:relative;top:1px;left:1px;display:inline-block;vertical-align:middle;">
+            <circle cx="12" cy="12" r="10" fill="#fff"/>
+            <circle cx="12" cy="12" r="10" fill="#4CAF50"/>
+            <path d="M8 12.5l2.5 2.5 5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `;
       } else {
         status.innerHTML = '';
       }
 
       const a = document.createElement('a');
       a.href = site.url;
-      a.textContent = "🔗 " + site.title;
+      a.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:5px;">
+          <path d="M17 7a1 1 0 0 1 0 2h-6a1 1 0 1 1 0-2h6zm-8 4a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2H9zm-2 4a1 1 0 0 1 0-2h12a1 1 0 1 1 0 2H7z" fill="#1a73e8"/>
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+        </svg>
+        ${site.title}
+      `;
       a.target = "_blank";
       a.style.textDecoration = "none";
       a.style.color = "#333";
@@ -90,8 +102,14 @@ function loadSites() {
 
       const del = document.createElement('span');
       del.className = 'delete-btn';
-      del.innerText = "✖️"; // Use emoji and innerText
-      del.style.color = "red";
+      del.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;">
+          <circle cx="12" cy="12" r="10" fill="#fff"/>
+          <circle cx="12" cy="12" r="10" fill="#e53935"/>
+          <line x1="9" y1="9" x2="15" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="15" y1="9" x2="9" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      `;
       del.style.cursor = "pointer";
       del.style.fontSize = "16px";
       del.onclick = () => deleteSite(index);
