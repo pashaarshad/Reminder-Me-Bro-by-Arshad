@@ -16,6 +16,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       if (unvisitedSites.length > 0) {
         chrome.notifications.create({
           type: 'basic',
+          // SVG icons are not supported directly in Chrome notifications.
+          // Use a PNG fallback or keep as is, but for UI (popup.js), use SVG as requested.
           iconUrl: 'icons.png',
           title: 'Reminder Me Bro',
           message: `Don't forget to visit: ${unvisitedSites.map(s => s.title).join(', ')}`
