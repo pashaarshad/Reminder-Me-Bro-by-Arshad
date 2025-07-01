@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Reminder Me Bro",
+  "version": "1.0",
+  "description": "Track and remind daily website visits",
+  "permissions": [
+    "storage",
+    "tabs",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons.png",
+    "48": "icons.png",
+    "128": "icons.png"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }]
+}

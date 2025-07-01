@@ -1,0 +1,41 @@
+.container {
+  width: 300px;
+  padding: 15px;
+}
+
+.add-site {
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+}
+
+.site-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.site-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.status-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+.visited {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.delete-btn {
+  margin-left: auto;
+  color: red;
+  cursor: pointer;
+}
