@@ -3,6 +3,23 @@
 <head>
   <title>Reminder Me Bro</title>
   <link rel="stylesheet" href="popup.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      /* Animated gradient background */
+      background: linear-gradient(120deg, #e3f0ff, #f9e7ff, #ffe3e3, #e3ffe9, #e3f0ff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease-in-out infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      25% {background-position: 50% 100%;}
+      50% {background-position: 100% 50%;}
+      75% {background-position: 50% 0%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -15,7 +32,5 @@
     <div id="siteList" class="site-list"></div>
   </div>
   <script src="popup.js"></script>
-</body>
-</html>
 </body>
 </html>
