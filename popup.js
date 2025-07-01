@@ -35,7 +35,7 @@ function loadSites() {
   const siteList = document.getElementById('siteList');
   siteList.innerHTML = `
     <div id="reminder-list">
-      <h4>🔔 Reminder Me Bro</h4>
+      <h4><i class="fa fa-folder-open" style="color:#1a73e8;margin-right:6px"></i>Reminder Me Bro</h4>
       <ul id="reminderItems"></ul>
     </div>
   `;
@@ -62,7 +62,11 @@ function loadSites() {
       status.style.borderRadius = "50%";
       status.style.border = site.visited ? "2px solid #4CAF50" : "2px solid #ccc";
       status.style.background = site.visited ? "#4CAF50" : "#fff";
-      status.innerText = site.visited ? "✔️" : ""; // Use emoji and innerText
+      if (site.visited) {
+        status.innerHTML = '<i class="fa fa-check-circle" style="color:#fff;font-size:18px;position:relative;top:1px;left:1px"></i>';
+      } else {
+        status.innerHTML = '';
+      }
 
       const a = document.createElement('a');
       a.href = site.url;
